@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5.8 Числа в различных форматах</title>
+</head>
+<body>
+    <h3>2.5.8 Числа в различных форматах</h3>
+
+<p>Числа в различных технологиях могут быть записаны в разных форматах для обхода механизмов валидации. Например, если отправка "0" как значения запрещена, то "0.00", "-0.00" или даже "$0" и "£0" могут быть разрешены.</p>
+
+<p>Следующая таблица показывает реакцию различных функций в ASP Classic (VBScript), C# .NET, Java и PHP на разные представления чисел.</p>
+
+<p>Описание столбцов:</p>
+<ul>
+    <li>A. VBScript – функция IsNumeric в ASP Classic</li>
+    <li>B. C# – функция IsNumeric в .NET</li>
+    <li>C. C# – функция Double.TryParse в .NET + результирующее значение</li>
+    <li>D. Java – функция Float.valueOf + результирующее значение</li>
+    <li>E. PHP – функция is_numeric</li>
+    <li>F. PHP – функция floatval + результирующее значение</li>
+</ul>
+
+<table>
+<tr>
+    <th>String</th>
+    <th>A</th>
+    <th>B</th>
+    <th>C</th>
+    <th>D</th>
+    <th>E</th>
+    <th>F</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>001.0000</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (1)</td>
+    <td>True (001.0000)</td>
+    <td>True</td>
+    <td>True (1)</td>
+    <td>Десятичный символ с ведущими нулями в зависимости от региональных настроек сервера</td>
+</tr>
+<tr>
+    <td>$10</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False (10)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>Символ валюты в соответствии с региональными настройками сервера</td>
+</tr>
+<tr>
+    <td>1,,2,,,3,,</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (123)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True (1)</td>
+    <td>Символ группировки разрядов в соответствии с региональными настройками сервера. Может быть создан через HPP.</td>
+</tr>
+<tr>
+    <td>-10.0</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (-10)</td>
+    <td>True (-10.0)</td>
+    <td>True</td>
+    <td>True (-10)</td>
+    <td>Символ отрицательного числа в соответствии с региональными настройками сервера. Может быть знаком плюса.</td>
+</tr>
+<tr>
+    <td>(10)</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False (-10)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>Символ отрицательного числа в соответствии с региональными настройками сервера.</td>
+</tr>
+<tr>
+    <td>10-</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False (-10)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True (10)</td>
+    <td>Символ отрицательного числа в соответствии с региональными настройками сервера. Может быть знаком плюса.</td>
+</tr>
+<tr>
+    <td>1e2</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (100)</td>
+    <td>True (1e2)</td>
+    <td>True</td>
+    <td>True (100)</td>
+    <td>Длина строки может быть меньше длины числа</td>
+</tr>
+<tr>
+    <td>%20%091</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (1)</td>
+    <td>True (1)</td>
+    <td>True</td>
+    <td>True (1)</td>
+    <td>Пробельные символы (09-0D и 20) Пробельные символы (09-0D и 20) %20=Пробел %09=Табуляция</td>
+</tr>
+<tr>
+    <td>1%20%00%00</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (1)</td>
+    <td>True (1)</td>
+    <td>False</td>
+    <td>True (1)</td>
+    <td>Пробельные символы (09-0D и 20) с последующими нулевыми символами</td>
+</tr>
+<tr>
+    <td>&hff</td>
+    <td>True</td>
+    <td>True</td>
+    <td>False (255)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>&h и &o могут использоваться в VBScript для представления числа в шестнадцатеричной или восьмеричной системе.</td>
+</tr>
+<tr>
+    <td>Infinity</td>
+    <td>False</td>
+    <td>True</td>
+    <td>True (Infinity)</td>
+    <td>True (Infinity)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>Infinity: зарезервированное слово для C# и Java</td>
+</tr>
+<tr>
+    <td>NaN</td>
+    <td>False</td>
+    <td>True</td>
+    <td>True (NaN)</td>
+    <td>True (NaN)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>NaN (не число): зарезервированное слово для C# и Java</td>
+</tr>
+<tr>
+    <td>0x0A</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False</td>
+    <td>Шестнадцатеричный формат</td>
+</tr>
+<tr>
+    <td>An Array</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True (1)</td>
+    <td>Передача входных данных в виде массива. Например: p.php?in[]=val</td>
+</tr>
+<tr>
+    <td>%0B%09%20-0001,,,,2.8e0002%09%20%0C%00%00</td>
+    <td>True</td>
+    <td>True</td>
+    <td>True (-1280)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>True (-1)</td>
+    <td>Пример использования приведенных обозначений</td>
+</tr>
+<tr>
+    <td>%0B$%09%20(0001,,,,2.8e0002%09%20)%0C%00%00</td>
+    <td>False</td>
+    <td>True</td>
+    <td>False (-1280)</td>
+    <td>False</td>
+    <td>False</td>
+    <td>False</td>
+    <td>Пример использования приведенных обозначений</td>
+</tr>
+
+</table>
+
+<p>Примечание 1: "Integer.parseInt" в Java не может преобразовать ни одно из чисел в приведенной таблице.</p>
+<p>Примечание 2: "Convert.ToInt32("0X0A", 16)" в C# .Net возвращает "10". Эта функция не может преобразовать другие числа из таблицы.</p>
+<p>Примечание 3: PHP 5.4 поддерживает бинарный префикс ("0b"), который также может использоваться для создания чисел.</p>
+</body>
+</html>

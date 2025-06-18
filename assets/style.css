@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.root {
+    display: flex;
+}
+nav {
+    width: 20%;
+    overflow-y:auto;
+    height: 100vh;
+}
+.disclaimer {
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+iframe {
+    flex: 1;
+    border: none;
+}
+li {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}

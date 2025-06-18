@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Содержание</title>
+</head>
+
+<body>
+    <div class="disclaimer">
+        Данный материал является переводом публикации: <a href="https://soroush.me/downloadable/common-security-issues-in-financially-orientated-web-applications.pdf">Common Security Issues in Financially-
+Oriented Web Applications</a> 
+    </div>
+    <div class="root">
+
+        <nav>
+            <h1>Содержание</h1>
+    
+            <ol>
+                <li>
+                    <a href="1.html" target="content">Введение</a>
+                </li>
+                <li>
+                    <a href="2.html" target="content">Распространенные классы уязвимостей в финансовых веб-приложениях</a>
+                    <ol>
+                        <li>
+                            <a href="2.1.html" target="content">Проблемы TOCTOU (Time-of-Check-Time-of-Use) и состояния гонки</a>
+                            <ol>
+                                <li>
+                                    <a href="2.1.1.html" target="content">Одновременный перевод денег или баллов, либо покупка товаров</a>
+                                </li>
+                                <li>
+                                    <a href="2.1.2.html" target="content">Изменение заказа при завершении оплаты</a>
+                                </li>
+                                <li>
+                                    <a href="2.1.3.html" target="content">Изменение заказа после завершения оплаты</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.2.html" target="content">Манипуляция параметрами</a>
+                            <ol>
+                                <li>
+                                    <a href="2.2.1.html" target="content">Манипуляция ценами</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.2.html" target="content">Манипуляция с валютами</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.3.html" target="content">Манипуляция количеством</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.4.html" target="content">Манипуляция адресом доставки и способом отправки</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.5.html" target="content">Манипуляция дополнительными расходами</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.6.html" target="content">Манипуляция ответами</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.7.html" target="content">Многократное повторение входного параметра</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.8.html" target="content">Пропуск входного параметра или его значения</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.9.html" target="content">Массовое присваивание, автопривязка или инъекция объектов</a>
+                                </li>
+                                <li>
+                                    <a href="2.2.10.html" target="content">Мониторинг поведения при изменении параметров для выявления логических уязвимостей</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.3.html" target="content">Атаки воспроизведения (Capture-Replay)</a>
+                            <ol>
+                                <li>
+                                    <a href="2.3.1.html" target="content">Воспроизведение callback-запроса</a>
+                                </li>
+                                <li>
+                                    <a href="2.3.2.html" target="content">Воспроизведение зашифрованного параметра</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.4.html" target="content">Ошибки округления</a>
+                            <ol>
+                                <li>
+                                    <a href="2.4.1.html" target="content">Проблемы округления валют</a>
+                                </li>
+                                <li>
+                                    <a href="2.4.2.html" target="content">Общие проблемы округления</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.5.html" target="content">Обработка числовых данных</a>
+                            <ol>
+                                <li>
+                                    <a href="2.5.1.html" target="content">Отрицательные числа</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.2.html" target="content">Десятичные числа</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.3.html" target="content">Большие или малые числа</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.4.html" target="content">Переполнения и потери значимости</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.5.html" target="content">Нулевые, null или субнормальные числа</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.6.html" target="content">Экспоненциальная запись</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.7.html" target="content">Зарезервированные слова</a>
+                                </li>
+                                <li>
+                                    <a href="2.5.8.html" target="content">Числа в разных форматах</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.6.html" target="content">Проблемы, связанные с номерами карт</a>
+                            <ol>
+                                <li>
+                                    <a href="2.6.1.html" target="content">Отображение сохраненного номера карты в процессе оплаты</a>
+                                </li>
+                                <li>
+                                    <a href="2.6.2.html" target="content">Перебор номеров карт через регистрацию дубликатов</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.7.html" target="content">Динамические цены, цены с допуском или реферальные схемы</a>
+                        </li>
+                        <li>
+                            <a href="2.8.html" target="content">Коды скидок, ваучеры, предложения, бонусные баллы и подарочные карты</a>
+                            <ol>
+                                <li>
+                                    <a href="2.8.1.html" target="content">
+                                        Перебор и угадывание
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="2.8.2.html" target="content">Накопление ваучеров и предложений</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.3.html" target="content">Получение большего количества баллов или кэшбэка, чем стоимость
+                                        товара</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.4.html" target="content">Использование просроченных, недействительных или чужих кодов</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.5.html" target="content">Манипуляция состоянием и корзиной</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.6.html" target="content">Злоупотребление возвратами</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.7.html" target="content">Акции "Купи X - получи Y бесплатно"</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.8.html" target="content">Заказ отсутствующих или невыпущенных товаров</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.9.html" target="content">Обход других ограничений</a>
+                                </li>
+                                <li>
+                                    <a href="2.8.10.html" target="content">Перевод баллов</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="2.9.html" target="content">Проблемы криптографии</a>
+                        </li>
+                        <li>
+                            <a href="2.10.html" target="content">Загружаемые и виртуальные товары</a>
+                        </li>
+                        <li>
+                            <a href="2.11.html" target="content">Скрытые и небезопасные backend API</a>
+                        </li>
+                        <li>
+                            <a href="2.12.html" target="content">Использование тестовых данных в production-среде</a>
+                        </li>
+                        <li>
+                            <a href="2.13.html" target="content">Валютный арбитраж при внесении/покупке и выводе/возврате</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="3.html" target="content">Заключение</a>
+                </li>
+                <li>
+                    <a href="4.html" target="content">Ссылки и дополнительная литература</a>
+                </li>
+            </ol>
+        </nav>
+        <iframe name="content" src="1.html"></iframe>
+    </div>
+</body>
+</html>
