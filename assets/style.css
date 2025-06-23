@@ -1,14 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     overflow-y: scroll;
     scrollbar-width: none;
-}
-
-h1, h2, h3 {
-    padding-bottom: 1em;
-    padding-top: 1em;
 }
 
 body {
