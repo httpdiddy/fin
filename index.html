@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Common Security Issues in Financially- Oriented Web Applications</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
         nav {
             position: fixed;
             top: 0;
@@ -23,7 +13,7 @@
             width: 2em;
             height: 100vh;
             background: rgba(55, 55, 55, 0.9);
-            color: white;
+            color: #e1e1e1;
             overflow: hidden;
             transition: width 0.3s ease;
             z-index: 90;
@@ -71,8 +61,9 @@
 
         .content {
             transition: filter 0.3s ease;
-            padding: 20px;
             margin-left: 2em;
+            padding-left: 2em;
+            padding-right: 2em;
         }
         
         #menu-checkbox:checked ~ .content {
@@ -81,26 +72,31 @@
 
         .menu-content ul {
             list-style: none;
-            margin-top: 40px;
         }
         
         .menu-content a {
-            color: white;
+            color: #e1e1e1;
             text-decoration: none;
             display: block;
             padding: 15px 0;
             font-size: 1.2em;
-            border-bottom: 1px solid #555;
+            border-bottom: 1px solid #404040;
         }
         
         .menu-content a:hover {
-            background: #555;
+            background: #404040;
         }
         
         iframe {
             width: 100%;
             height: calc(100vh - 40px);
             border: none;
+        }
+        @media (min-width: 769px) {
+            .content {
+                padding-left: 18em;
+                padding-right: 16em;
+            }
         }
     </style>
 </head>
